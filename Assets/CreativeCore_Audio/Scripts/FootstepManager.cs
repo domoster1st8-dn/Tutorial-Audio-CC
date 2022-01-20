@@ -13,7 +13,7 @@ public class FootstepManager : MonoBehaviour
     private Surface surface;
 
     private List<AudioClip> currentList;
-
+    [SerializeField]
     private AudioSource source;
 
     private void Start()
@@ -21,13 +21,14 @@ public class FootstepManager : MonoBehaviour
         source = GetComponent<AudioSource>();            
     }
 
-    public void PlayStep ()
+    public void PlayStep()
     {
         AudioClip clip = currentList[Random.Range(0, currentList.Count)];
         source.PlayOneShot(clip);
+        
     }
 
-    private void SelectStepList ()
+    private void SelectStepList()
     {
         switch (surface)
         {
